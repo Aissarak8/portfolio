@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Project screenshot placeholder">
+  <defs>
+    <linearGradient id="ph" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#0EA5E9" stop-opacity="0.18"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="#0D1117"/>
+  <rect width="800" height="450" fill="url(#ph)"/>
+  <g fill="none" stroke="#6366F1" stroke-opacity="0.5" stroke-width="3">
+    <rect x="300" y="160" width="200" height="130" rx="12"/>
+    <circle cx="350" cy="205" r="14"/>
+    <path d="M312 285 l60 -55 l45 40 l40 -35 l71 65"/>
+  </g>
+  <text x="400" y="345" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600" fill="#9CA3AF" text-anchor="middle">Screenshot coming soon</text>
+</svg>

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Aissa Slikou — social preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D1117"/>
+      <stop offset="1" stop-color="#161B22"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <radialGradient id="blob" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#6366F1" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#6366F1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="320" fill="url(#blob)"/>
+  <circle cx="160" cy="560" r="280" fill="url(#blob)"/>
+
+  <!-- Monogram -->
+  <rect x="80" y="90" width="96" height="96" rx="24" fill="url(#brand)"/>
+  <text x="128" y="155" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="800" fill="#fff" text-anchor="middle">AS</text>
+
+  <!-- Handle -->
+  <text x="200" y="150" font-family="JetBrains Mono, monospace" font-size="26" fill="#9CA3AF">@Aissarak8</text>
+
+  <!-- Name -->
+  <text x="80" y="350" font-family="Inter, Arial, sans-serif" font-size="92" font-weight="800" fill="#ffffff">Aissa Slikou</text>
+
+  <!-- Role -->
+  <text x="84" y="420" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="600" fill="url(#brand)">AI Engineer · Full-Stack Developer · Automation</text>
+
+  <!-- Tagline -->
+  <text x="84" y="475" font-family="Inter, Arial, sans-serif" font-size="28" fill="#9CA3AF">Building AI agents, web apps &amp; automations — from Marrakech, Morocco.</text>
+
+  <!-- Footer chips -->
+  <g font-family="Inter, Arial, sans-serif" font-size="22" font-weight="600">
+    <rect x="80" y="520" width="150" height="48" rx="24" fill="#21262D"/>
+    <text x="155" y="551" fill="#E5E7EB" text-anchor="middle">React</text>
+    <rect x="244" y="520" width="150" height="48" rx="24" fill="#21262D"/>
+    <text x="319" y="551" fill="#E5E7EB" text-anchor="middle">Python</text>
+    <rect x="408" y="520" width="190" height="48" rx="24" fill="#21262D"/>
+    <text x="503" y="551" fill="#E5E7EB" text-anchor="middle">AI · RAG · MCP</text>
+    <rect x="612" y="520" width="120" height="48" rx="24" fill="#21262D"/>
+    <text x="672" y="551" fill="#E5E7EB" text-anchor="middle">n8n</text>
+  </g>
+</svg>

@@ -1,0 +1,99 @@
+{
+  "_README": "This is the ONLY file you edit to teach the assistant. Each intent has `keywords` (trigger words/phrases, lowercase) and EITHER an `answer` (plain text; emails & links become clickable) OR a `source` that pulls live data from the site so nothing is duplicated. Valid sources: about | skills | projects | education | experience | roadmap | contact | languages. Add new intents freely.",
+  "name": "Aïssa's Assistant",
+  "greeting": "Hi! 👋 I'm Aïssa's assistant. I can tell you about his skills, projects, education, roadmap, or how to reach him. What would you like to know?",
+  "fallback": "I can only answer questions about Aïssa — his skills, projects, education, roadmap, or contact info. Try one of these:",
+  "suggestions": ["What are your skills?", "Show me your projects", "What's your roadmap?", "How can I contact you?"],
+  "intents": [
+    {
+      "id": "greeting",
+      "keywords": ["hi", "hello", "hey", "salam", "bonjour", "yo", "good morning", "good evening"],
+      "answer": "Hey there! 👋 Ask me anything about Aïssa — his skills, projects, education, roadmap, or contact details.",
+      "suggestions": ["What are your skills?", "Show me your projects", "How can I contact you?"]
+    },
+    {
+      "id": "about",
+      "keywords": ["who are you", "about", "yourself", "tell me about", "introduce", "bio", "background", "aissa"],
+      "source": "about",
+      "suggestions": ["What are your skills?", "What's your roadmap?"]
+    },
+    {
+      "id": "skills",
+      "keywords": ["skill", "skills", "tech", "technology", "stack", "language", "languages", "programming", "code", "know", "tools", "framework"],
+      "source": "skills",
+      "suggestions": ["Show me your projects", "Do you work with AI?"]
+    },
+    {
+      "id": "projects",
+      "keywords": ["project", "projects", "build", "built", "work", "portfolio", "swaply", "app", "apps", "made", "created", "repo"],
+      "source": "projects",
+      "suggestions": ["What's your tech stack?", "What's your roadmap?"]
+    },
+    {
+      "id": "ai",
+      "keywords": ["ai", "artificial intelligence", "agent", "agents", "rag", "mcp", "automation", "n8n", "machine learning", "llm", "chatbot"],
+      "answer": "Aïssa is focused on AI engineering: building AI agents, RAG (retrieval-augmented generation) pipelines, and integrations with the Model Context Protocol (MCP). He also automates workflows with n8n. These are a core part of his roadmap and his planned projects like the AI Research Agent.",
+      "suggestions": ["Show me your projects", "What's your roadmap?"]
+    },
+    {
+      "id": "education",
+      "keywords": ["education", "study", "studying", "school", "university", "college", "degree", "licence", "license", "diploma", "faculty", "semlalia"],
+      "source": "education",
+      "suggestions": ["What are your skills?", "What languages do you speak?"]
+    },
+    {
+      "id": "experience",
+      "keywords": ["experience", "job", "jobs", "intern", "internship", "career", "professional", "employed"],
+      "source": "experience",
+      "suggestions": ["Are you available to hire?", "Show me your projects"]
+    },
+    {
+      "id": "roadmap",
+      "keywords": ["roadmap", "goal", "goals", "future", "plan", "plans", "learning", "next", "ambition", "vision"],
+      "source": "roadmap",
+      "suggestions": ["Show me your projects", "What are your skills?"]
+    },
+    {
+      "id": "languages",
+      "keywords": ["language do you speak", "spoken", "speak", "arabic", "french", "english", "fluent", "languages you"],
+      "source": "languages",
+      "suggestions": ["Where are you based?", "How can I contact you?"]
+    },
+    {
+      "id": "location",
+      "keywords": ["where", "location", "live", "based", "marrakech", "morocco", "from", "city", "country"],
+      "answer": "Aïssa is based in Marrakech, Morocco 🇲🇦, and is open to remote work worldwide.",
+      "suggestions": ["Are you available to hire?", "How can I contact you?"]
+    },
+    {
+      "id": "availability",
+      "keywords": ["available", "hire", "hiring", "freelance", "remote", "open to", "looking for", "recruit", "opportunity", "work with you"],
+      "answer": "Yes! Aïssa is open to internships, remote roles, and freelance work. The best way to start a conversation is by email — ask me for his contact info.",
+      "suggestions": ["How can I contact you?", "Show me your projects"]
+    },
+    {
+      "id": "contact",
+      "keywords": ["contact", "email", "reach", "phone", "call", "linkedin", "github", "message", "get in touch", "connect", "social"],
+      "source": "contact",
+      "suggestions": ["Are you available to hire?", "Where are you based?"]
+    },
+    {
+      "id": "cv",
+      "keywords": ["cv", "resume", "curriculum", "download"],
+      "answer": "Aïssa's CV will be available to download from the portfolio soon (🚧 the PDF is being finalized). In the meantime, ask me about his skills, projects, or contact info.",
+      "suggestions": ["What are your skills?", "How can I contact you?"]
+    },
+    {
+      "id": "thanks",
+      "keywords": ["thanks", "thank you", "thx", "merci", "appreciate", "great", "awesome", "cool", "nice"],
+      "answer": "You're welcome! 😊 Anything else you'd like to know about Aïssa?",
+      "suggestions": ["Show me your projects", "What's your roadmap?"]
+    },
+    {
+      "id": "bot",
+      "keywords": ["are you real", "are you a bot", "what are you", "who made you", "how do you work", "are you ai", "are you human"],
+      "answer": "I'm a lightweight assistant built into this portfolio. I run entirely in your browser using a small local knowledge file — no external AI service — and I only answer questions about Aïssa. 🙂",
+      "suggestions": ["What are your skills?", "Show me your projects"]
+    }
+  ]
+}
