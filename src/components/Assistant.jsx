@@ -229,7 +229,7 @@ export default function Assistant() {
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about Aïssa…"
+                placeholder="Ask about Aissa…"
                 aria-label="Message the assistant"
                 className="focus:ring-brand-500/40 flex-1 rounded-full bg-gray-100 px-4 py-2 text-sm outline-none focus:ring-2 dark:bg-white/5"
               />

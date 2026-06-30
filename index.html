@@ -3,21 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SPA fallback decoder (pairs with public/404.html) — restores deep links on GitHub Pages -->
+    <script>
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/logo.svg" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- ===== Primary SEO ===== -->
-    <title>Aissa Slikou — AI Engineer & Full-Stack Developer</title>
-    <meta name="title" content="Aissa Slikou — AI Engineer & Full-Stack Developer" />
+    <title>Aissa Slikou — Applied Computer Science Student | Future AI Engineer</title>
+    <meta
+      name="title"
+      content="Aissa Slikou — Applied Computer Science Student | Future AI Engineer"
+    />
     <meta
       name="description"
-      content="Aissa Slikou — AI Engineer, Full-Stack Developer and Automation Engineer from Marrakech, Morocco. Building AI agents, web apps and automations."
+      content="Aissa Slikou — Applied Computer Science student from Marrakech, Morocco, passionate about AI, automation and full-stack development. Building practical projects and learning in public."
     />
     <meta name="author" content="Aissa Slikou" />
     <meta
       name="keywords"
-      content="Aissa Slikou, AI Engineer, Full-Stack Developer, Automation, React, Node.js, Python, RAG, MCP, n8n, Marrakech, Morocco"
+      content="Aissa Slikou, Applied Computer Science, AI Engineer, Full-Stack Developer, Student, React, Python, Java, AI Agents, n8n, Marrakech, Morocco, internship"
     />
     <meta name="theme-color" content="#0D1117" />
 
@@ -25,24 +44,29 @@
          🚧 TODO: social platforms (LinkedIn, X, Facebook) need a PNG/JPG, not SVG.
          Open ../assets/og-image.html in a browser and export it to public/og-image.png
          (1200x630). A ready-made design lives at public/og-image.svg. -->
-    <!-- ===== Open Graph ===== -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aissaslikou.github.io/portfolio/" />
-    <meta property="og:title" content="Aissa Slikou — AI Engineer & Full-Stack Developer" />
+    <meta property="og:url" content="https://aissarak8.github.io/portfolio/" />
+    <meta
+      property="og:title"
+      content="Aissa Slikou — Applied Computer Science Student | Future AI Engineer"
+    />
     <meta
       property="og:description"
-      content="Building AI agents, web apps and automations. AI Engineer · Full-Stack Developer · Automation Engineer."
+      content="Applied Computer Science student passionate about AI, automation and full-stack development. Building practical projects and learning in public."
     />
-    <meta property="og:image" content="https://aissaslikou.github.io/portfolio/og-image.png" />
+    <meta property="og:image" content="https://aissarak8.github.io/portfolio/og-image.png" />
 
     <!-- ===== Twitter ===== -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aissa Slikou — AI Engineer & Full-Stack Developer" />
+    <meta
+      name="twitter:title"
+      content="Aissa Slikou — Applied Computer Science Student | Future AI Engineer"
+    />
     <meta
       name="twitter:description"
-      content="Building AI agents, web apps and automations from Marrakech, Morocco."
+      content="Applied Computer Science student passionate about AI, automation and full-stack development, from Marrakech, Morocco."
     />
-    <meta name="twitter:image" content="https://aissaslikou.github.io/portfolio/og-image.png" />
+    <meta name="twitter:image" content="https://aissarak8.github.io/portfolio/og-image.png" />
 
     <!-- ===== Fonts ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -58,10 +82,20 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Aissa Slikou",
-        "jobTitle": "AI Engineer & Full-Stack Developer",
-        "url": "https://aissaslikou.github.io/portfolio/",
+        "jobTitle": "Applied Computer Science Student | Future AI Engineer",
+        "url": "https://aissarak8.github.io/portfolio/",
         "email": "aissaslikou2@gmail.com",
-        "address": { "@type": "PostalAddress", "addressLocality": "Marrakech", "addressCountry": "Morocco" }
+        "alumniOf": "Faculté des Sciences Semlalia",
+        "knowsLanguage": ["Arabic", "English", "French"],
+        "sameAs": [
+          "https://github.com/Aissarak8",
+          "https://www.linkedin.com/in/aissa-slikou-5422ba237"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Marrakech",
+          "addressCountry": "Morocco"
+        }
       }
     </script>
   </head>

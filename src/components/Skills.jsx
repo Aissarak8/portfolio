@@ -50,11 +50,34 @@ export default function Skills() {
                 </span>
                 <h3 className="font-semibold">{group.category}</h3>
               </div>
+              {/* Rated skills → progress bars */}
               <div className="space-y-4">
-                {group.skills.map((s) => (
-                  <Bar key={s.name} {...s} />
-                ))}
+                {group.skills
+                  .filter((s) => s.level != null)
+                  .map((s) => (
+                    <Bar key={s.name} {...s} />
+                  ))}
               </div>
+
+              {/* Unrated skills (tools / currently learning) → chips */}
+              {group.skills.some((s) => s.level == null) && (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.skills
+                    .filter((s) => s.level == null)
+                    .map((s) => (
+                      <span
+                        key={s.name}
+                        className={`rounded-full px-3 py-1 text-sm ${
+                          s.learning
+                            ? 'bg-accent-500/10 text-accent-500'
+                            : 'bg-brand-500/10 text-brand-500'
+                        }`}
+                      >
+                        {s.name}
+                      </span>
+                    ))}
+                </div>
+              )}
             </div>
           </Reveal>
         ))}

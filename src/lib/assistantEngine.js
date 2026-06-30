@@ -2,7 +2,7 @@ import kb from '../data/assistant.json';
 import { profile } from '../data/profile';
 import { projects } from '../data/projects';
 import { skillGroups } from '../data/skills';
-import { education, experience, timeline } from '../data/content';
+import { education, experience, learningJourney } from '../data/content';
 
 /**
  * Local, dependency-free "AI" assistant.
@@ -28,40 +28,43 @@ function fromSource(source) {
       const lines = skillGroups.map(
         (g) => `• ${g.category}: ${g.skills.map((s) => s.name).join(', ')}`
       );
-      return `Here's Aïssa's tech stack:\n${lines.join('\n')}`;
+      return `Here's Aissa's tech stack:\n${lines.join('\n')}`;
     }
 
     case 'projects': {
       const lines = projects.map((p) => `• ${p.title} — ${p.category} [${p.status}]`);
-      return `Aïssa is building these (all open-source on GitHub):\n${lines.join(
+      return `Aissa's projects:\n${lines.join(
         '\n'
-      )}\n\nNote: these are honestly marked as Planned / In Progress.`;
+      )}\n\nThe portfolio is built; the rest are honestly marked as Planned.`;
     }
 
     case 'education': {
       const e = education[0];
-      return `Aïssa is studying ${e.degree} at ${e.school} (${e.period}). ${e.description}`;
+      return `Aissa is studying ${e.degree} at ${e.school} (${e.period}). ${e.description}`;
     }
 
     case 'experience': {
+      if (experience.length === 0) {
+        return `Aissa has no professional experience yet — he's a student focused on building real projects and is actively looking for internships. ${profile.careerObjective}`;
+      }
       const lines = experience.map((e) => `• ${e.role} — ${e.company} (${e.period})`);
-      return `Aïssa's journey so far:\n${lines.join('\n')}`;
+      return `Aissa's experience:\n${lines.join('\n')}`;
     }
 
-    case 'roadmap': {
-      const lines = timeline.map((t) => `• ${t.year}: ${t.title} — ${t.text}`);
-      return `Aïssa's roadmap:\n${lines.join('\n')}`;
-    }
+    case 'roadmap':
+      return `Aissa's learning journey:\nLearning now: ${learningJourney.current.join(
+        ', '
+      )}\nNext up: ${learningJourney.future.join(', ')}`;
 
     case 'languages':
-      return `Aïssa speaks ${profile.languages.map((l) => `${l.name} (${l.level})`).join(', ')}.`;
+      return `Aissa speaks ${profile.languages.map((l) => `${l.name} (${l.level})`).join(', ')}.`;
 
     case 'contact': {
-      const parts = [`📧 ${profile.email}`, `📱 ${profile.phone}`, `💻 ${profile.socials.github}`];
+      const parts = [`📧 ${profile.email}`, `💻 ${profile.socials.github}`];
       if (profile.socials.linkedin) parts.push(`🔗 ${profile.socials.linkedin}`);
-      return `Here's how to reach Aïssa:\n${parts.join(
+      return `Here's how to reach Aissa:\n${parts.join(
         '\n'
-      )}\n\nHe's open to internships, remote roles and freelance work.`;
+      )}\n\nHe's open to internship opportunities.`;
     }
 
     default:

@@ -1,73 +1,76 @@
 /**
  * Central profile config. Edit THIS file to update the whole site.
- *
- * ✅ Verified facts: name, location, email, phone, education, languages, GitHub handle.
- * 🚧 TODO items below are clearly marked — fill them in as they become real.
- *    Never replace a TODO with invented data.
+ * All content here is real and honest — no invented experience or inflated claims.
  */
 export const profile = {
   name: 'Aissa Slikou',
   firstName: 'Aissa',
-  title: 'AI Engineer · Full-Stack Developer · Software Entrepreneur',
-  tagline: 'I build AI agents, web apps, and automations — and I learn in public.',
+  title: 'Applied Computer Science Student | Future AI Engineer',
+  // Short bio used in the hero.
+  tagline:
+    'Applied Computer Science student passionate about AI, automation and full-stack development — building practical projects and learning in public.',
   location: 'Marrakech, Morocco',
   email: 'aissaslikou2@gmail.com',
-  phone: '+212 621 805 770',
 
   // GitHub handle — single source of truth for every link in the app.
   githubUsername: 'Aissarak8',
+  portfolioUrl: 'https://aissarak8.github.io/portfolio/',
 
-  // 🚧 TODO: add a real resume PDF at portfolio/public/resume.pdf
+  // 🚧 TODO: replace with your real professional photo at public/avatar.jpg,
+  //          then point this to '/avatar.jpg'. For now a clean placeholder avatar.
+  avatar: '/avatar.svg',
+
+  // 🚧 TODO: add a real resume PDF at public/resume.pdf
   resumeUrl: '/resume.pdf',
 
-  // GitHub REST API has no "pinned" endpoint (it's GraphQL-only, needs a token),
-  // so the dashboard shows THESE repos as your pins. Keep in sync with what you
-  // actually pin on github.com/Aissarak8.
-  pinnedRepos: [
-    'portfolio',
-    'swaply',
-    'ai-agents',
-    'n8n-workflows',
-    'react-projects',
-    'python-projects',
-  ],
+  // Shown as "pins" on the dashboard (GitHub REST has no pinned endpoint without a token).
+  pinnedRepos: ['portfolio', 'swaply', 'ai-whatsapp-agent', 'github-analyzer', 'weather-dashboard'],
 
-  // The project id (from data/projects.js) to feature as your current main focus.
+  // Featured as the current main project on the dashboard.
   currentProjectId: 'portfolio',
 
   education: {
-    degree: 'Licence en Informatique Appliquée',
+    degree: 'Licence en Informatique Appliquée (Applied Computer Science)',
     school: 'Faculté des Sciences Semlalia',
     location: 'Marrakech, Morocco',
     period: '2025 — Present',
   },
 
-  // Spoken languages (CEFR levels).
+  // Spoken languages.
   languages: [
     { name: 'Arabic', level: 'Native' },
-    { name: 'French', level: 'B2' },
-    { name: 'English', level: 'B1' },
+    { name: 'English', level: 'Intermediate' },
+    { name: 'French', level: 'Basic' },
   ],
 
   about: [
-    "I'm a Computer Science student at Faculté des Sciences Semlalia in Marrakech, focused on Artificial Intelligence, automation, and full-stack web development.",
-    'I learn in public and aim to ship something every month — from AI agents and RAG pipelines to React apps and n8n automations.',
-    'My goal is to grow into an AI Engineer, Full-Stack Developer and software entrepreneur — building real products and SaaS while contributing to teams as an intern or remote developer.',
+    "I'm Aissa Slikou, an Applied Computer Science student based in Marrakech, Morocco.",
+    'My goal is to become an AI Engineer by mastering software engineering, artificial intelligence, automation, and modern web development.',
+    "I enjoy transforming ideas into real applications that solve meaningful problems. I'm currently focused on learning Python, Java, C, AI, automation, and full-stack development while building production-quality projects for my portfolio.",
+    'I believe the best way to learn is by building real products, documenting the journey, and continuously improving through practice. My long-term ambition is to work on innovative products at companies like Google or Microsoft while also building successful SaaS products of my own.',
   ],
+
+  careerObjective:
+    "I'm looking for internship opportunities where I can contribute to real software projects, collaborate with experienced engineers, and continue developing my technical skills in AI, automation, and software engineering.",
+
+  longTermGoal:
+    'Become a world-class AI Engineer capable of building intelligent software products, scalable SaaS platforms, and advanced automation systems.',
+
+  dreamCompanies: ['Google', 'Microsoft'],
+
+  hobbies: ['Football', 'Technology', 'Reading'],
 
   socials: {
     github: 'https://github.com/Aissarak8',
+    linkedin: 'https://www.linkedin.com/in/aissa-slikou-5422ba237',
     email: 'mailto:aissaslikou2@gmail.com',
-    // 🚧 TODO: add real profile URLs, then re-enable these links.
-    linkedin: '', // e.g. 'https://www.linkedin.com/in/your-handle'
-    twitter: '', // optional
   },
 
-  // Honest, defensible stats only — no inflated numbers.
+  // Honest, defensible stats only.
   stats: [
-    { label: 'Languages Spoken', value: '3' },
-    { label: 'Technologies', value: '20+' },
-    { label: 'Month Roadmap', value: '12' },
+    { label: 'Languages', value: '3' },
+    { label: 'Coding Since', value: '2025' },
+    { label: 'Focus Areas', value: 'AI · Web' },
     { label: 'Curiosity', value: '∞' },
   ],
 };

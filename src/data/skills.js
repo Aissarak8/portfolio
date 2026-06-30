@@ -1,86 +1,76 @@
 /**
- * Skills grouped by category. `level` (0–100) drives progress bars.
- * `learning: true` marks tech currently being learned (shown with a badge).
+ * Skills grouped by category.
+ * - Skills with a `level` (0–100, mapped from an honest self-rating /5) show a bar.
+ * - Skills WITHOUT a level render as a chip (e.g. tools, or tech I'm still learning),
+ *   so nothing implies a proficiency I don't have.
  */
 export const skillGroups = [
   {
-    category: 'Languages',
+    category: 'Programming',
     icon: 'Code2',
     skills: [
-      { name: 'Java', level: 80 },
-      { name: 'Python', level: 78 },
-      { name: 'C', level: 70 },
-      { name: 'JavaScript', level: 65, learning: true },
-      { name: 'PHP', level: 50, learning: true },
-      { name: 'HTML5', level: 90 },
-      { name: 'CSS3', level: 85 },
-    ],
-  },
-  {
-    category: 'Frontend',
-    icon: 'Layout',
-    skills: [
-      { name: 'React', level: 65, learning: true },
-      { name: 'Tailwind CSS', level: 75 },
-      { name: 'Vite', level: 70 },
-      { name: 'Responsive Design', level: 85 },
-    ],
-  },
-  {
-    category: 'Backend',
-    icon: 'Server',
-    skills: [
-      { name: 'Node.js', level: 55, learning: true },
-      { name: 'Express', level: 50, learning: true },
-      { name: 'REST APIs', level: 65 },
-      { name: 'WordPress / WooCommerce', level: 60, learning: true },
+      { name: 'HTML', level: 80 }, // 4/5
+      { name: 'CSS', level: 60 }, // 3/5
+      { name: 'JavaScript', level: 40 }, // 2/5
+      { name: 'Python', level: 40 }, // 2/5
+      { name: 'Java', level: 20 }, // 1/5
+      { name: 'C', level: 20 }, // 1/5
     ],
   },
   {
     category: 'AI & Automation',
     icon: 'BrainCircuit',
     skills: [
-      { name: 'AI Agents', level: 60, learning: true },
-      { name: 'RAG', level: 55, learning: true },
-      { name: 'MCP', level: 50, learning: true },
-      { name: 'n8n', level: 60, learning: true },
-      { name: 'Prompt Engineering', level: 75 },
+      { name: 'AI Agents', level: 40 }, // 2/5
+      { name: 'n8n', level: 40 }, // 2/5
     ],
   },
   {
     category: 'Tools',
     icon: 'Wrench',
     skills: [
-      { name: 'Git & GitHub', level: 80 },
-      { name: 'VS Code', level: 90 },
-      { name: 'Figma', level: 60 },
-      { name: 'Postman', level: 70 },
+      { name: 'GitHub', level: 40 }, // 2/5
+      { name: 'Git', level: 20 }, // 1/5
+      { name: 'VS Code' }, // chip
+    ],
+  },
+  {
+    category: 'Currently Learning',
+    icon: 'GraduationCap',
+    skills: [
+      { name: 'React', learning: true },
+      { name: 'Node.js', learning: true },
+      { name: 'Express.js', learning: true },
+      { name: 'Tailwind CSS', learning: true },
+      { name: 'SQL', learning: true },
+      { name: 'WordPress', learning: true },
+      { name: 'Docker', learning: true },
+      { name: 'RAG', learning: true },
+      { name: 'MCP', learning: true },
     ],
   },
 ];
 
-/** Flat tech-stack list for the marquee / tech grid. */
+/** Flat tech list for the marquee. */
 export const techStack = [
-  'Java',
-  'Python',
-  'C',
+  'HTML',
+  'CSS',
   'JavaScript',
-  'PHP',
-  'HTML5',
-  'CSS3',
+  'Python',
+  'Java',
+  'C',
   'React',
   'Node.js',
-  'Express',
+  'Express.js',
   'Tailwind CSS',
-  'Vite',
-  'WordPress',
-  'WooCommerce',
-  'n8n',
+  'SQL',
   'Git',
   'GitHub',
-  'Figma',
-  'LangChain',
-  'OpenAI',
-  'Claude',
-  'Gemini',
+  'VS Code',
+  'WordPress',
+  'Docker',
+  'AI Agents',
+  'n8n',
+  'RAG',
+  'MCP',
 ];

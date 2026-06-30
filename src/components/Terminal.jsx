@@ -4,7 +4,7 @@ import Reveal from './ui/Reveal';
 import { profile } from '../data/profile';
 import { projects } from '../data/projects';
 import { skillGroups } from '../data/skills';
-import { timeline } from '../data/content';
+import { learningJourney } from '../data/content';
 
 /**
  * Interactive terminal. Commands answer from the same data that powers the site,
@@ -97,13 +97,15 @@ export default function Terminal() {
         </div>
       ),
       roadmap: () => (
-        <div className="space-y-0.5">
-          {timeline.map((t) => (
-            <p key={t.year + t.title}>
-              <span className="text-brand-400">{String(t.year).padEnd(8)}</span>
-              {t.title} — <span className="text-gray-400">{t.text}</span>
-            </p>
-          ))}
+        <div className="space-y-1">
+          <p>
+            <span className="text-brand-400">learning now </span>
+            {learningJourney.current.join(', ')}
+          </p>
+          <p>
+            <span className="text-brand-400">next up </span>
+            {learningJourney.future.join(', ')}
+          </p>
         </div>
       ),
       contact: () => (
@@ -113,12 +115,12 @@ export default function Terminal() {
             {link(`mailto:${profile.email}`, profile.email)}
           </p>
           <p>
-            <span className="text-gray-500">phone </span>
-            {profile.phone}
+            <span className="text-gray-500">github </span>
+            {link(profile.socials.github, `@${profile.githubUsername}`)}
           </p>
           <p>
-            <span className="text-gray-500">github</span>{' '}
-            {link(profile.socials.github, `@${profile.githubUsername}`)}
+            <span className="text-gray-500">linkedin </span>
+            {link(profile.socials.linkedin, 'aissa-slikou')}
           </p>
         </div>
       ),
@@ -152,9 +154,9 @@ export default function Terminal() {
       │   A   S   ▮    │   ${profile.name}
       │  ▟███▙ ▟██▙    │   ${'-'.repeat(profile.name.length)}
       │  ██ ██ ██▛     │   handle: @${profile.githubUsername}
-      │  ▜███▛ ▜██▛    │   role:   AI · Full-Stack · Automation
+      │  ▜███▛ ▜██▛    │   role:   CS Student · Future AI Engineer
       │               │   loc:    ${profile.location}
-      ╰───────────────╯   stack:  React · Node · Python · n8n`}
+      ╰───────────────╯   stack:  Python · JavaScript · HTML · CSS`}
         </pre>
       ),
       clear: () => '__CLEAR__',

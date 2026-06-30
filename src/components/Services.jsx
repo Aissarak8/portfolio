@@ -9,10 +9,10 @@ export default function Services() {
       <SectionHeading
         eyebrow="Services"
         title="What I can do for you"
-        subtitle="From AI agents to full web products — here's how I can help."
+        subtitle="Services that honestly match my current level — websites, customization and simple automation."
       />
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
           <Reveal key={s.title} delay={i * 0.08}>
             <div className="glass group hover:shadow-brand-500/10 h-full rounded-2xl p-6 transition-all hover:-translate-y-1.5 hover:shadow-xl">

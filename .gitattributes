@@ -1,0 +1,7 @@
+# Normalize line endings: treat as text, check out with LF.
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.svg text eol=lf

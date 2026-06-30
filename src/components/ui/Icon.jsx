@@ -6,6 +6,9 @@ import {
   Wrench,
   Workflow,
   ShoppingCart,
+  GraduationCap,
+  Globe,
+  Paintbrush,
   Sparkles,
 } from 'lucide-react';
 
@@ -18,6 +21,9 @@ const map = {
   Wrench,
   Workflow,
   ShoppingCart,
+  GraduationCap,
+  Globe,
+  Paintbrush,
   Sparkles,
 };
 

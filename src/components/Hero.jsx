@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ArrowDown, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowDown } from 'lucide-react';
 import { profile } from '../data/profile';
 
 export default function Hero() {
@@ -41,16 +41,26 @@ export default function Hero() {
             className="mt-6 text-4xl leading-[1.1] font-extrabold tracking-tight sm:text-5xl md:text-6xl"
           >
             Hi, I'm <span className="gradient-text">{profile.firstName}</span>.
-            <br />I build <span className="gradient-text">AI</span> &amp; web products.
+            <br />
+            Future <span className="gradient-text">AI Engineer</span>.
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-6 max-w-xl text-lg text-gray-500 dark:text-gray-400"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-brand-500 mt-3 font-medium"
           >
-            {profile.title}, based in {profile.location}. {profile.tagline}
+            {profile.title}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 max-w-xl text-lg text-gray-500 dark:text-gray-400"
+          >
+            Based in {profile.location}. {profile.tagline}
           </motion.p>
 
           <motion.div
@@ -66,10 +76,10 @@ export default function Hero() {
               View My Work
             </a>
             <a
-              href={profile.resumeUrl}
+              href="#contact"
               className="glass inline-flex items-center gap-2 rounded-xl px-6 py-3 font-semibold transition-transform hover:scale-[1.03]"
             >
-              <FileText size={18} /> Resume
+              <Mail size={18} /> Contact Me
             </a>
           </motion.div>
 
@@ -118,11 +128,13 @@ export default function Hero() {
               <span className="text-purple-400">const</span>{' '}
               <span className="text-accent-400">developer</span> = {'{'}
               {'\n'} name: <span className="text-green-400">'Aissa Slikou'</span>,{'\n'} role:{' '}
-              <span className="text-green-400">'AI & Full-Stack'</span>,{'\n'} stack: [
-              <span className="text-green-400">'React'</span>,{' '}
-              <span className="text-green-400">'Node'</span>,{' '}
-              <span className="text-green-400">'Python'</span>],
-              {'\n'} learning: <span className="text-green-400">'AI Agents'</span>,{'\n'} shipping:{' '}
+              <span className="text-green-400">'CS Student · Future AI Engineer'</span>,{'\n'}{' '}
+              stack: [<span className="text-green-400">'Python'</span>,{' '}
+              <span className="text-green-400">'JavaScript'</span>,{' '}
+              <span className="text-green-400">'HTML'</span>,{' '}
+              <span className="text-green-400">'CSS'</span>],
+              {'\n'} learning: [<span className="text-green-400">'React'</span>,{' '}
+              <span className="text-green-400">'AI Agents'</span>],{'\n'} building:{' '}
               <span className="text-brand-400">true</span>,{'\n'}
               {'}'};
             </pre>

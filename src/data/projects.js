@@ -1,41 +1,118 @@
 /**
- * Project catalog. Each entry powers a project card + case-study modal.
+ * Project catalog — the single source of truth for cards AND case-study pages.
  *
- * INTEGRITY RULE: none of these are finished/deployed yet, so every project is
- * honestly marked 'Planned' or 'In Progress'. Update a project to 'Live' and add
- * a real `demo` URL ONLY once it is actually built and deployed.
+ * INTEGRITY RULE: only real projects. The portfolio is built; the rest are
+ * honestly marked 'Planned' (the UI shows "Coming Soon" + a fillable template,
+ * with NO fake screenshots or fabricated details). Update a project to
+ * 'Completed' and add real `details` + `demo` only once it's actually built.
  *
- * status:     'Live' | 'In Progress' | 'Planned'
+ * status:     'Completed' | 'In Progress' | 'Planned'
  * difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
  */
-export const categories = ['All', 'AI', 'Web', 'Automation', 'SaaS', 'Mobile'];
+export const categories = ['All', 'AI', 'Web', 'Automation', 'SaaS'];
 
 const GH = 'https://github.com/Aissarak8';
 
 export const projects = [
   {
     id: 'portfolio',
-    title: 'Developer Portfolio',
+    title: 'Portfolio Website',
     category: 'Web',
     year: 2026,
-    status: 'In Progress',
+    status: 'Completed',
     difficulty: 'Intermediate',
     image: '', // 🚧 TODO: add /public/projects/portfolio.png
     description:
-      'This website — a fast, animated, SEO-optimized portfolio with live GitHub integration, dark mode and glassmorphism UI.',
+      'This website — a fast, animated, SEO-optimized developer portfolio with a live GitHub dashboard, an interactive terminal, a local AI assistant, dark mode and glassmorphism UI.',
     tech: ['React', 'Tailwind', 'Vite', 'Framer Motion'],
     features: [
       'Dark / light mode',
-      'Live GitHub API stats',
-      'Project filtering & search',
-      'Scroll animations',
+      'Live GitHub dashboard',
+      'Interactive terminal',
+      'Local AI assistant',
+      'Project case-study pages',
+      'Responsive & SEO-friendly',
     ],
     caseStudy:
       'Designed Apple-inspired: minimal, lots of whitespace, premium typography. Built component-first and deployed on GitHub Pages.',
     github: `${GH}/portfolio`,
-    demo: '', // 🚧 TODO: add live URL after deploying
+    demo: 'https://aissarak8.github.io/portfolio/',
     featured: true,
+    // ✅ Real, fully-written case study (this very site).
+    details: {
+      overview:
+        'A fast, modern, Apple-inspired portfolio that doubles as a developer hub: live GitHub dashboard, an interactive terminal, a local AI assistant, and case-study pages — all in one cohesive, data-driven React app.',
+      problem:
+        'A junior developer needs to stand out in the first 10 seconds. A plain CV or a generic template portfolio blends in and fails to show real engineering ability, taste, or live activity.',
+      solution:
+        'Build a premium, interactive portfolio that is itself a portfolio piece: it shows live GitHub data, lets visitors explore via a terminal and an AI assistant, and presents projects as proper case studies — proving front-end skill, attention to detail, and product thinking.',
+      architecture: {
+        components: [
+          {
+            name: 'Pages',
+            desc: 'Home (section stack) and per-project case-study pages via React Router.',
+          },
+          {
+            name: 'Sections',
+            desc: 'Hero, About, Skills, Projects, Dashboard, Terminal, Contact — composed from small reusable UI primitives.',
+          },
+          {
+            name: 'Hooks & lib',
+            desc: 'useGitHub, useVisitorCount, the local assistant engine and the case-study layer.',
+          },
+          {
+            name: 'Data',
+            desc: 'A single source of truth in src/data/* — edit data, not components.',
+          },
+        ],
+        dataFlow:
+          'data/* (facts) → hooks/lib (logic & live fetches) → components (presentation). The GitHub API and a visitor-count API are fetched client-side; everything else is local.',
+        folderStructure:
+          'portfolio/\n├── src/\n│   ├── components/   # UI + sections\n│   ├── pages/        # Home, ProjectPage\n│   ├── hooks/        # useGitHub, useVisitorCount\n│   ├── lib/          # assistant engine, case-study layer\n│   ├── data/         # single source of truth\n│   └── context/      # theme\n├── .github/workflows/deploy.yml\n└── vite.config.js',
+      },
+      stack: [
+        { label: 'Frontend', items: ['React 18', 'Vite', 'Tailwind CSS v4', 'Framer Motion'] },
+        { label: 'Data / APIs', items: ['GitHub REST API', 'Abacus (visitor count)'] },
+        { label: 'Tooling', items: ['ESLint', 'Prettier'] },
+        { label: 'Deployment', items: ['GitHub Pages', 'GitHub Actions'] },
+      ],
+      process: [
+        'Designed an Apple-inspired system: lots of whitespace, premium type, a single indigo→sky gradient.',
+        'Built component-first with a strict data/logic/presentation separation.',
+        'Added live integrations (GitHub, visitor counter) with graceful loading & error states.',
+        'Layered in interactive features: terminal, local AI assistant, and case-study pages.',
+      ],
+      challenges: [
+        {
+          challenge: 'Showing live GitHub data without a backend or leaking a token.',
+          solution:
+            'Used the public REST API client-side with strict loading/error handling, so it degrades to a clean placeholder instead of fake numbers.',
+        },
+        {
+          challenge: 'Keeping content honest while the other projects are still being built.',
+          solution:
+            'Centralized all content in data files and built an auto-template system that clearly marks unbuilt projects as Planned / Coming Soon.',
+        },
+      ],
+      learned: [
+        'Designing and shipping a cohesive design system in Tailwind v4.',
+        'Integrating third-party APIs cleanly with React hooks.',
+        'Structuring a scalable React app with clear separation of concerns.',
+      ],
+      future: [
+        'Add a markdown blog section.',
+        'Add real project screenshots and a downloadable CV.',
+        'Add automated tests and a Lighthouse CI check.',
+      ],
+      gallery: [
+        { src: '', caption: 'Hero & landing — add /projects/portfolio-hero.png' },
+        { src: '', caption: 'Live dashboard — add /projects/portfolio-dashboard.png' },
+        { src: '', caption: 'Interactive terminal — add /projects/portfolio-terminal.png' },
+      ],
+    },
   },
+
+  // ----- Planned projects (Coming Soon — no fake details or screenshots) -----
   {
     id: 'swaply',
     title: 'Swaply',
@@ -44,146 +121,65 @@ export const projects = [
     status: 'Planned',
     difficulty: 'Advanced',
     image: '',
-    description:
-      'A planned flagship SaaS platform to swap, sell and discover items — with auth, payments and an AI recommendation layer.',
-    tech: ['React', 'Node.js', 'Tailwind', 'PostgreSQL', 'OpenAI'],
-    features: [
-      'User authentication & profiles',
-      'AI-powered recommendations',
-      'Real-time chat between users',
-      'Stripe payments integration',
-    ],
-    caseStudy:
-      'Swaply is my main long-term product goal. The plan is to learn the full SaaS lifecycle: idea → MVP → users → monetization, combining a React frontend, a Node/Express API, and an AI recommendation service.',
+    description: 'A planned SaaS platform to swap, sell and discover items. Not built yet.',
+    tech: ['React', 'Node.js', 'Tailwind', 'SQL'],
+    features: ['Planned: user accounts', 'Planned: listings & search', 'Planned: messaging'],
+    caseStudy: '',
     github: `${GH}/swaply`,
     demo: '',
     featured: true,
   },
   {
-    id: 'ai-research-agent',
-    title: 'AI Research Agent',
+    id: 'ai-whatsapp-agent',
+    title: 'AI WhatsApp Agent',
     category: 'AI',
     year: 2026,
     status: 'Planned',
     difficulty: 'Advanced',
     image: '',
-    description:
-      'A planned autonomous agent that researches a topic, reads sources via RAG, and produces a cited report — built with the Model Context Protocol (MCP).',
-    tech: ['Python', 'LangChain', 'RAG', 'MCP', 'Claude'],
+    description: 'A planned AI agent that answers WhatsApp messages automatically. Not built yet.',
+    tech: ['Python', 'AI Agents', 'n8n'],
     features: [
-      'Multi-step reasoning',
-      'RAG over documents',
-      'Tool calling via MCP',
-      'Cited markdown output',
+      'Planned: auto-reply to messages',
+      'Planned: simple knowledge base',
+      'Planned: n8n automation',
     ],
-    caseStudy:
-      'A planned deep-dive into agentic AI: planning, tool use, retrieval-augmented generation and the MCP standard for connecting models to tools and data.',
-    github: `${GH}/ai-agents`,
+    caseStudy: '',
+    github: `${GH}/ai-whatsapp-agent`,
     demo: '',
     featured: true,
   },
   {
-    id: 'n8n-automations',
-    title: 'n8n Automation Suite',
-    category: 'Automation',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Intermediate',
-    image: '',
-    description:
-      'A planned collection of automations — lead capture, email digests, social posting and data sync — orchestrated with n8n.',
-    tech: ['n8n', 'REST APIs', 'Webhooks', 'JavaScript'],
-    features: [
-      'Automated lead pipeline',
-      'Scheduled reports',
-      'Multi-app sync',
-      'Error handling & retries',
-    ],
-    caseStudy:
-      'Planned real automations that save hours every week. Each workflow will be documented and exportable as JSON so anyone can import and reuse it.',
-    github: `${GH}/n8n-workflows`,
-    demo: '',
-    featured: true,
-  },
-  {
-    id: 'woocommerce-store',
-    title: 'WooCommerce Store',
+    id: 'github-analyzer',
+    title: 'GitHub Analyzer',
     category: 'Web',
     year: 2026,
     status: 'Planned',
     difficulty: 'Intermediate',
     image: '',
     description:
-      'A planned custom WordPress + WooCommerce store with a tailored theme, payment gateway and optimized product pages.',
-    tech: ['WordPress', 'WooCommerce', 'PHP', 'CSS'],
-    features: ['Custom theme', 'Payment gateway', 'SEO product pages', 'Responsive design'],
-    caseStudy:
-      'A planned real e-commerce build to learn the PHP/WordPress ecosystem, theming and the practical side of online stores.',
-    github: `${GH}/wordpress-projects`,
+      'A planned web app that analyzes a GitHub profile and visualizes its stats. Not built yet.',
+    tech: ['React', 'GitHub API', 'Tailwind'],
+    features: ['Planned: profile stats', 'Planned: language breakdown', 'Planned: activity charts'],
+    caseStudy: '',
+    github: `${GH}/github-analyzer`,
     demo: '',
     featured: false,
   },
   {
-    id: 'algo-visualizer',
-    title: 'Algorithm Visualizer',
-    category: 'Web',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Intermediate',
-    image: '',
-    description:
-      'A planned interactive visualizer for sorting and pathfinding algorithms, to help learners see how the code actually runs.',
-    tech: ['JavaScript', 'HTML5 Canvas', 'CSS'],
-    features: ['Sorting animations', 'Pathfinding grid', 'Adjustable speed', 'Step-by-step mode'],
-    caseStudy:
-      'Planned to deepen my DSA knowledge by turning abstract algorithms into something visual and intuitive.',
-    github: `${GH}/algorithms`,
-    demo: '',
-    featured: false,
-  },
-  {
-    id: 'expense-tracker',
-    title: 'Expense Tracker',
-    category: 'Mobile',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Beginner',
-    image: '',
-    description:
-      'A planned clean mobile-first app to track income and expenses with charts, categories and monthly summaries.',
-    tech: ['React', 'Tailwind', 'LocalStorage'],
-    features: [
-      'Add / edit transactions',
-      'Category breakdown',
-      'Monthly charts',
-      'Offline support',
-    ],
-    caseStudy:
-      'A focused planned build to practice state management, charts and mobile-first responsive design.',
-    github: `${GH}/mini-projects`,
-    demo: '',
-    featured: false,
-  },
-  {
-    id: 'java-bank-system',
-    title: 'Java Banking System',
+    id: 'weather-dashboard',
+    title: 'Weather Dashboard',
     category: 'Web',
     year: 2026,
     status: 'Planned',
     difficulty: 'Beginner',
     image: '',
     description:
-      'A planned console-based banking system in Java demonstrating OOP, file persistence and clean architecture.',
-    tech: ['Java', 'OOP', 'File I/O'],
-    features: [
-      'Accounts & transactions',
-      'Object-oriented design',
-      'Data persistence',
-      'Input validation',
-    ],
-    caseStudy:
-      'A planned foundational Java project focused on OOP principles, encapsulation and writing maintainable code.',
-    github: `${GH}/java-projects`,
+      'A planned weather dashboard showing current conditions and forecasts by city. Not built yet.',
+    tech: ['JavaScript', 'Weather API', 'CSS'],
+    features: ['Planned: city search', 'Planned: current weather', 'Planned: multi-day forecast'],
+    caseStudy: '',
+    github: `${GH}/weather-dashboard`,
     demo: '',
     featured: false,
   },

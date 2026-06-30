@@ -1,60 +1,50 @@
 /**
- * Services, experience, education, certificates, testimonials, timeline.
+ * Services, experience, education, certificates, testimonials, learning journey.
  *
- * INTEGRITY RULE: nothing here is invented. Anything not yet real is an empty
- * array or a clearly-marked 🚧 TODO. Fill them in only with true information.
+ * INTEGRITY RULE: nothing here is invented. No professional experience or
+ * certificates yet, so those are empty and the UI shows an honest message.
  */
 
+// Only services that honestly match the current level.
 export const services = [
   {
-    icon: 'BrainCircuit',
-    title: 'AI & Agents',
+    icon: 'Layout',
+    title: 'Landing Page Development',
     description:
-      'Custom AI agents, RAG pipelines and MCP integrations that automate real tasks and reason over your data.',
+      'Clean, fast, single-page landing sites built with modern HTML, CSS and JavaScript.',
   },
   {
     icon: 'Code2',
-    title: 'Full-Stack Web',
+    title: 'Portfolio Website Development',
     description:
-      'Modern, responsive web apps with React & Node.js — from landing pages to full products with APIs and auth.',
+      'Personal and portfolio websites — like this one — built with React and Tailwind CSS.',
+  },
+  {
+    icon: 'Paintbrush',
+    title: 'Website Customization',
+    description: 'Tweaking and customizing existing websites: layout, styling and small features.',
+  },
+  {
+    icon: 'Globe',
+    title: 'Responsive Web Design',
+    description: 'Mobile-first, responsive layouts that look great on every screen size.',
   },
   {
     icon: 'Workflow',
-    title: 'Automation',
+    title: 'AI Automation',
     description:
-      'Workflow automation with n8n and custom scripts — connect your apps and remove repetitive manual work.',
-  },
-  {
-    icon: 'ShoppingCart',
-    title: 'WordPress & WooCommerce',
-    description:
-      'Custom WordPress sites and WooCommerce stores with tailored themes and optimized, SEO-friendly pages.',
+      'Building simple automations and AI agents with n8n — currently learning and taking on small projects.',
   },
 ];
 
-/**
- * Honest "journey" — self-directed learning & building, NOT employment.
- * 🚧 TODO: add real internships / freelance / client work here once you have it,
- *    with the real company, role and dates. Do not invent.
- */
-export const experience = [
-  {
-    role: 'Aspiring Full-Stack & AI Developer (Self-Directed)',
-    company: 'Independent Learning & Open Source',
-    period: '2025 — Present',
-    location: 'Marrakech, Morocco',
-    points: [
-      'Building a public portfolio of projects across web, AI and automation.',
-      'Studying AI engineering: agents, RAG pipelines and the Model Context Protocol (MCP).',
-      'Learning full-stack development with React, Node.js and modern tooling.',
-    ],
-  },
-  // 🚧 TODO: { role: '', company: '', period: '', location: '', points: [] }
-];
+// No professional experience yet — kept empty on purpose. The UI shows an honest
+// note + career objective instead of inventing roles.
+// 🚧 TODO: add real internships / freelance work here once you have them.
+export const experience = [];
 
 export const education = [
   {
-    degree: 'Licence en Informatique Appliquée',
+    degree: 'Licence en Informatique Appliquée (Applied Computer Science)',
     school: 'Faculté des Sciences Semlalia',
     period: '2025 — Present',
     description:
@@ -62,40 +52,15 @@ export const education = [
   },
 ];
 
-/**
- * 🚧 TODO: Certificates — currently EMPTY on purpose (none invented).
- * Add real ones as you earn them, e.g.:
- *   { title: 'Responsive Web Design', issuer: 'freeCodeCamp', year: '2026', url: 'https://...' }
- */
+// 🚧 TODO: none yet — add real certificates as they are earned. The UI shows a
+// tasteful placeholder while empty.
 export const certificates = [];
 
-/**
- * 🚧 TODO: Testimonials — EMPTY until you collect real reviews.
- * Fake testimonials hurt credibility, so the section shows a tasteful placeholder
- * until this array has real entries.
- *   { name: '', role: '', text: '', avatar: '' }
- */
+// 🚧 TODO: empty until real reviews are collected (no fake testimonials).
 export const testimonials = [];
 
-export const timeline = [
-  {
-    year: '2025',
-    title: 'Started CS Degree',
-    text: 'Began Licence en Informatique Appliquée at Faculté des Sciences Semlalia.',
-  },
-  {
-    year: '2025',
-    title: 'Foundations',
-    text: 'Building on Java, C and Python; learning HTML, CSS & JavaScript.',
-  },
-  {
-    year: '2026',
-    title: 'Full-Stack & AI',
-    text: 'Focusing on React, Node.js, AI agents, RAG, MCP and n8n automation.',
-  },
-  {
-    year: 'Goal',
-    title: 'Ship Products',
-    text: 'Build and launch real SaaS products like Swaply, and land internships / remote roles.',
-  },
-];
+/** Learning Journey — what I've started vs what's next. Honest checklist. */
+export const learningJourney = {
+  current: ['Python', 'Java', 'C', 'React', 'Node.js', 'AI', 'AI Agents', 'n8n'],
+  future: ['Docker', 'SQL', 'RAG', 'MCP', 'Next.js', 'AWS', 'Kubernetes'],
+};
