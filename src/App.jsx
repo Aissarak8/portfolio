@@ -7,8 +7,10 @@ import Footer from './components/Footer';
 import Assistant from './components/Assistant';
 import Home from './pages/Home';
 
-// Code-split the case-study page so it's not in the initial bundle.
+// Code-split secondary pages so they're not in the initial bundle.
 const ProjectPage = lazy(() => import('./pages/ProjectPage'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 
 /** Scrolls to top on route change (unless a section target is provided). */
 function ScrollToTop() {
@@ -45,6 +47,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects/:id" element={<ProjectPage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>

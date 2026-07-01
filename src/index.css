@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 /* ============================================================
    THEME TOKENS  (Tailwind v4 @theme — Apple-inspired palette)

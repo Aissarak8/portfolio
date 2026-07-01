@@ -9,6 +9,7 @@ import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import Dashboard from '../components/Dashboard';
 import Terminal from '../components/Terminal';
+import BlogTeaser from '../components/BlogTeaser';
 import Contact from '../components/Contact';
 
 /** The single-page homepage. Sections live here; routing lives in App. */
@@ -37,6 +38,7 @@ export default function Home() {
       <Experience />
       <Dashboard />
       <Terminal />
+      <BlogTeaser />
       <Contact />
     </main>
   );

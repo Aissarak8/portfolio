@@ -13,6 +13,7 @@ const links = [
   { id: 'experience', label: 'Experience' },
   { id: 'dashboard', label: 'Dashboard' },
   { id: 'terminal', label: 'Terminal' },
+  { id: 'blog', label: 'Blog', to: '/blog' },
   { id: 'contact', label: 'Contact' },
 ];
 
@@ -20,7 +21,7 @@ export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const active = useScrollSpy(links.map((l) => l.id));
+  const active = useScrollSpy(links.filter((l) => !l.to).map((l) => l.id));
   const navigate = useNavigate();
   const location = useLocation();
   const onHome = location.pathname === '/';
@@ -31,16 +32,19 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Scroll to a section if on the homepage, otherwise navigate home + scroll.
-  const go = (id) => {
+  // Navigate to a route link, or scroll to a section (from any route).
+  const go = (link) => {
     setOpen(false);
-    if (id === 'home' && !onHome) return navigate('/');
+    if (link.to) return navigate(link.to);
+    if (link.id === 'home' && !onHome) return navigate('/');
     if (onHome) {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
     } else {
-      navigate('/', { state: { scrollTo: id } });
+      navigate('/', { state: { scrollTo: link.id } });
     }
   };
+
+  const isActive = (l) => (l.to ? location.pathname.startsWith(l.to) : active === l.id);
 
   return (
     <motion.header
@@ -53,7 +57,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 md:px-8">
         {/* Logo */}
-        <button onClick={() => go('home')} className="flex items-center gap-2 font-bold">
+        <button onClick={() => go({ id: 'home' })} className="flex items-center gap-2 font-bold">
           <span className="from-brand-500 to-accent-500 grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br text-white">
             AS
           </span>
@@ -67,15 +71,15 @@ export default function Navbar() {
           {links.map((l) => (
             <li key={l.id}>
               <button
-                onClick={() => go(l.id)}
+                onClick={() => go(l)}
                 className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
-                  active === l.id
+                  isActive(l)
                     ? 'text-brand-500'
                     : 'hover:text-brand-500 text-gray-600 dark:text-gray-300'
                 }`}
               >
                 {l.label}
-                {active === l.id && (
+                {isActive(l) && (
                   <motion.span
                     layoutId="nav-underline"
                     className="bg-brand-500 absolute inset-x-2 -bottom-0.5 h-0.5 rounded-full"
@@ -119,7 +123,7 @@ export default function Navbar() {
             {links.map((l) => (
               <li key={l.id}>
                 <button
-                  onClick={() => go(l.id)}
+                  onClick={() => go(l)}
                   className="hover:text-brand-500 block w-full px-8 py-3 text-left text-sm font-medium"
                 >
                   {l.label}
