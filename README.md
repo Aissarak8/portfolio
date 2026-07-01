@@ -118,4 +118,7 @@ image: '/projects/swaply.png',
 
 ## 📄 License
 
-MIT © [Aissa Slikou](mailto:aissaslikou2@gmail.com)
+- **Code** — [MIT](LICENSE). You're welcome to read, learn from, and reuse the code. Attribution is appreciated.
+- **Personal content** — the text, bio, blog posts, images and personal branding are © [Aissa Slikou](mailto:aissaslikou2@gmail.com). Please don't republish them as your own. If you fork this to build your own portfolio, swap in your own content. 🙏
+
+MIT © 2026 Aissa Slikou
