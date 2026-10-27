@@ -1,15 +1,14 @@
 /**
  * Project catalog — the single source of truth for cards AND case-study pages.
  *
- * INTEGRITY RULE: only real projects. The portfolio is built; the rest are
- * honestly marked 'Planned' (the UI shows "Coming Soon" + a fillable template,
- * with NO fake screenshots or fabricated details). Update a project to
- * 'Completed' and add real `details` + `demo` only once it's actually built.
+ * INTEGRITY RULE: only real projects with credible evidence of implementation
+ * or contribution. Keep descriptions and case studies aligned with what is
+ * actually present in the project or its repository.
  *
  * status:     'Completed' | 'Release Candidate' | 'In Progress' | 'Planned'
  * difficulty: 'Beginner' | 'Intermediate' | 'Advanced'
  */
-export const categories = ['All', 'AI', 'Web', 'Automation', 'SaaS'];
+export const categories = ['All', 'AI', 'Web'];
 
 const GH = 'https://github.com/Aissarak8';
 const BASE = import.meta.env.BASE_URL;
@@ -241,75 +240,77 @@ export const projects = [
     },
   },
 
-  // ----- Planned projects (Coming Soon — no fake details or screenshots) -----
-  {
-    id: 'swaply',
-    title: 'Swaply',
-    category: 'SaaS',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Advanced',
-    image: '',
-    description: 'A planned SaaS platform to swap, sell and discover items. Not built yet.',
-    tech: ['React', 'Node.js', 'Tailwind', 'SQL'],
-    features: ['Planned: user accounts', 'Planned: listings & search', 'Planned: messaging'],
-    caseStudy: '',
-    github: `${GH}/swaply`,
-    demo: '',
-    featured: true,
-  },
-  {
-    id: 'ai-whatsapp-agent',
-    title: 'AI WhatsApp Agent',
-    category: 'AI',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Advanced',
-    image: '',
-    description: 'A planned AI agent that answers WhatsApp messages automatically. Not built yet.',
-    tech: ['Python', 'AI Agents', 'n8n'],
-    features: [
-      'Planned: auto-reply to messages',
-      'Planned: simple knowledge base',
-      'Planned: n8n automation',
-    ],
-    caseStudy: '',
-    github: `${GH}/ai-whatsapp-agent`,
-    demo: '',
-    featured: true,
-  },
-  {
-    id: 'github-analyzer',
-    title: 'GitHub Analyzer',
-    category: 'Web',
-    year: 2026,
-    status: 'Planned',
-    difficulty: 'Intermediate',
-    image: '',
-    description:
-      'A planned web app that analyzes a GitHub profile and visualizes its stats. Not built yet.',
-    tech: ['React', 'GitHub API', 'Tailwind'],
-    features: ['Planned: profile stats', 'Planned: language breakdown', 'Planned: activity charts'],
-    caseStudy: '',
-    github: `${GH}/github-analyzer`,
-    demo: '',
-    featured: false,
-  },
   {
     id: 'weather-dashboard',
     title: 'Weather Dashboard',
     category: 'Web',
     year: 2026,
-    status: 'Planned',
+    status: 'Completed',
     difficulty: 'Beginner',
     image: '',
     description:
-      'A planned weather dashboard showing current conditions and forecasts by city. Not built yet.',
-    tech: ['JavaScript', 'Weather API', 'CSS'],
-    features: ['Planned: city search', 'Planned: current weather', 'Planned: multi-day forecast'],
-    caseStudy: '',
+      'A responsive weather dashboard with city search, current conditions, hourly forecasts, air-condition metrics, and a seven-day forecast.',
+    tech: ['JavaScript', 'HTML', 'CSS', 'OpenWeatherMap API'],
+    features: [
+      'Search current weather by city',
+      "Today's hourly forecast",
+      'Real feel, wind, pressure, and chance of rain',
+      'Seven-day forecast',
+    ],
+    caseStudy:
+      'Built as a vanilla JavaScript learning project using OpenWeatherMap data and a responsive dashboard layout.',
     github: `${GH}/weather-dashboard`,
     demo: '',
-    featured: false,
+    featured: true,
+    details: {
+      overview:
+        'A functional weather dashboard built with HTML, CSS, and vanilla JavaScript. It fetches OpenWeatherMap data and presents current weather, hourly conditions, air metrics, and a seven-day forecast.',
+      problem:
+        'Weather API responses contain several kinds of forecast data that need to remain readable across desktop and small-screen layouts.',
+      solution:
+        'Use a city search form to fetch weather data, render each forecast section with DOM updates, and organize the interface as responsive cards and scrollable forecast tables.',
+      architecture: {
+        components: [
+          { name: 'HTML', desc: 'Semantic search and forecast sections.' },
+          {
+            name: 'CSS',
+            desc: 'Responsive grid, cards, tables, and accessible interaction states.',
+          },
+          { name: 'JavaScript', desc: 'API requests, error handling, and DOM rendering.' },
+        ],
+        dataFlow:
+          'City search → OpenWeatherMap request → response validation → current, hourly, air-condition, and seven-day UI updates.',
+        folderStructure:
+          'weather-dashboard/\n├── index.html\n├── style.css\n├── app.js\n├── config.example.js\n└── README.md',
+      },
+      stack: [
+        { label: 'Frontend', items: ['HTML', 'CSS', 'JavaScript'] },
+        { label: 'Data', items: ['OpenWeatherMap API'] },
+      ],
+      process: [
+        'Created the semantic page structure and dashboard sections.',
+        'Built the responsive dark-theme layout and forecast tables.',
+        'Connected the OpenWeatherMap API and rendered live forecast data.',
+        'Improved error states, keyboard focus, contrast, and small-screen behavior.',
+      ],
+      challenges: [
+        {
+          challenge: 'Keeping wide forecast data usable on small screens.',
+          solution: 'Added responsive layouts and horizontal scrolling for forecast tables.',
+        },
+        {
+          challenge: 'Handling unsuccessful weather requests clearly.',
+          solution:
+            'Surface the actual HTTP status reason instead of always reporting an unknown city.',
+        },
+      ],
+      learned: [
+        'Fetching and validating third-party API data with vanilla JavaScript.',
+        'Rendering multiple forecast views from one data flow.',
+        'Improving responsive and accessible UI states.',
+      ],
+      future: ['Add a hosted demo without exposing the OpenWeatherMap API key.'],
+      gallery: [],
+    },
   },
 ];
