@@ -9,6 +9,7 @@ import { projects, categories } from '../data/projects';
 const statusColor = {
   Completed: 'bg-green-500/15 text-green-500',
   Live: 'bg-green-500/15 text-green-500',
+  'Release Candidate': 'bg-amber-500/15 text-amber-500',
   'In Progress': 'bg-yellow-500/15 text-yellow-500',
   Planned: 'bg-gray-500/15 text-gray-400',
 };
@@ -40,10 +41,17 @@ function ProjectCard({ project }) {
             {project.title.charAt(0)}
           </div>
         )}
-        <span
-          className={`absolute top-3 right-3 rounded-full px-2.5 py-1 text-xs font-semibold ${statusColor[project.status]}`}
-        >
-          {project.status}
+        <span className="absolute top-3 right-3 flex flex-wrap justify-end gap-1.5">
+          {project.license && (
+            <span className="rounded-full bg-black/65 px-2.5 py-1 text-xs font-semibold text-white">
+              {project.license}
+            </span>
+          )}
+          <span
+            className={`rounded-full px-2.5 py-1 text-xs font-semibold ${statusColor[project.status] || statusColor.Planned}`}
+          >
+            {project.status}
+          </span>
         </span>
       </Link>
 
@@ -91,7 +99,8 @@ function ProjectCard({ project }) {
               href={project.demo}
               target="_blank"
               rel="noreferrer"
-              aria-label={`${project.title} live demo`}
+              aria-label={project.demoLabel || `${project.title} live demo`}
+              title={project.demoLabel || 'Open live demo'}
               className="grid h-9 w-9 place-items-center rounded-lg border border-gray-200 hover:bg-gray-100 dark:border-white/10 dark:hover:bg-white/5"
             >
               <ExternalLink size={16} />

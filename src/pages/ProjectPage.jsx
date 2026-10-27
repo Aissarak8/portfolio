@@ -30,6 +30,7 @@ const statusStyle = {
   Live: 'bg-green-500/15 text-green-500',
   Completed: 'bg-green-500/15 text-green-500',
   'In Progress': 'bg-yellow-500/15 text-yellow-500',
+  'Release Candidate': 'bg-amber-500/15 text-amber-500',
   Planned: 'bg-gray-500/15 text-gray-400',
 };
 
@@ -86,6 +87,7 @@ export default function ProjectPage() {
   const cs = getCaseStudy(project);
   const { prev, next } = getAdjacentProjects(id);
   const hasDemo = Boolean(project.demo);
+  const demoLabel = project.demoLabel || 'Live Demo';
 
   return (
     <article className="pt-28 pb-24">
@@ -119,6 +121,11 @@ export default function ProjectPage() {
               <span className="text-sm text-gray-400">
                 {project.category} · {project.year}
               </span>
+              {project.license && (
+                <span className="rounded-full bg-gray-500/10 px-3 py-1 text-xs font-semibold text-gray-500 dark:text-gray-300">
+                  {project.license} License
+                </span>
+              )}
             </div>
 
             <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl">{project.title}</h1>
@@ -153,7 +160,7 @@ export default function ProjectPage() {
                   rel="noreferrer"
                   className="glass inline-flex items-center gap-2 rounded-xl px-5 py-2.5 font-semibold"
                 >
-                  <ExternalLink size={18} /> Live Demo
+                  <ExternalLink size={18} /> {demoLabel}
                 </a>
               ) : (
                 <button
@@ -372,7 +379,11 @@ export default function ProjectPage() {
               <div>
                 <h2 className="text-xl font-bold">Explore the project</h2>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Source on GitHub{hasDemo ? ' · try the live demo' : ' · live demo coming soon'}.
+                  Source on GitHub
+                  {hasDemo
+                    ? ` · ${project.demoLabel ? 'download the current pre-release' : 'try the live demo'}`
+                    : ' · live demo coming soon'}
+                  .
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-3">
@@ -391,7 +402,7 @@ export default function ProjectPage() {
                     rel="noreferrer"
                     className="glass inline-flex items-center gap-2 rounded-xl px-5 py-2.5 font-semibold"
                   >
-                    <ExternalLink size={18} /> Live Demo
+                    <ExternalLink size={18} /> {demoLabel}
                   </a>
                 ) : (
                   <button
