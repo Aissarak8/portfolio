@@ -260,7 +260,7 @@ export const projects = [
     caseStudy:
       'Built as a vanilla JavaScript learning project using OpenWeatherMap data and a responsive dashboard layout.',
     github: `${GH}/weather-dashboard`,
-    demo: '',
+    demo: 'https://aissarak8.github.io/weather-dashboard/',
     featured: true,
     details: {
       overview:
