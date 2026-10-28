@@ -24,7 +24,7 @@ export const profile = {
   resumeUrl: '/resume.pdf',
 
   // Shown as "pins" on the dashboard (GitHub REST has no pinned endpoint without a token).
-  pinnedRepos: ['portfolio', 'swaply', 'ai-whatsapp-agent', 'github-analyzer', 'weather-dashboard'],
+  pinnedRepos: ['agentpilot', 'portfolio', 'weather-dashboard'],
 
   // Featured as the current main project on the dashboard.
   currentProjectId: 'portfolio',

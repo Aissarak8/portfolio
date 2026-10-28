@@ -8,10 +8,8 @@
   </url>
 
   <!-- Projects -->
+  <url><loc>https://aissarak8.github.io/portfolio/projects/agentpilot</loc><priority>0.8</priority></url>
   <url><loc>https://aissarak8.github.io/portfolio/projects/portfolio</loc><priority>0.8</priority></url>
-  <url><loc>https://aissarak8.github.io/portfolio/projects/swaply</loc><priority>0.6</priority></url>
-  <url><loc>https://aissarak8.github.io/portfolio/projects/ai-whatsapp-agent</loc><priority>0.6</priority></url>
-  <url><loc>https://aissarak8.github.io/portfolio/projects/github-analyzer</loc><priority>0.6</priority></url>
   <url><loc>https://aissarak8.github.io/portfolio/projects/weather-dashboard</loc><priority>0.6</priority></url>
 
   <!-- Blog -->

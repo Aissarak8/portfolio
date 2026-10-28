@@ -59,9 +59,7 @@
         "built",
         "work",
         "portfolio",
-        "swaply",
-        "whatsapp",
-        "analyzer",
+        "agentpilot",
         "weather",
         "app",
         "apps",
@@ -86,7 +84,7 @@
         "llm",
         "chatbot"
       ],
-      "answer": "Aissa is learning AI engineering: AI agents, automation with n8n, and foundations like RAG and the Model Context Protocol (MCP). A planned project — an AI WhatsApp Agent — is part of this focus.",
+      "answer": "Aissa is learning AI engineering: AI agents, automation with n8n, and foundations like RAG and the Model Context Protocol (MCP). AgentPilot applies that interest to local-first Codex workflows inside VS Code.",
       "suggestions": ["Show me your projects", "What are you learning?"]
     },
     {

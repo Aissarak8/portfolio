@@ -22,7 +22,7 @@ I'll be honest up front: **I'm a beginner** with AI agents. This post is less "h
 1. **Start simple** — build a basic chatbot and understand prompts.
 2. **Add retrieval** — try a small RAG project so the AI can answer from documents.
 3. **Automate something real** — use n8n to remove a repetitive task.
-4. **Combine them** — my planned *AI WhatsApp Agent* project ties these ideas together.
+4. **Combine them** — build a small agent project that ties these ideas together.
 
 ## Why I'm excited
 
