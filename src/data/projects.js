@@ -247,7 +247,7 @@ export const projects = [
     year: 2026,
     status: 'Completed',
     difficulty: 'Beginner',
-    image: '',
+    image: `${BASE}projects/weather-dashboard/weather-dashboard-main.png`,
     description:
       'A responsive weather dashboard with city search, current conditions, hourly forecasts, air-condition metrics, and a seven-day forecast.',
     tech: ['JavaScript', 'HTML', 'CSS', 'OpenWeatherMap API'],
@@ -310,7 +310,35 @@ export const projects = [
         'Improving responsive and accessible UI states.',
       ],
       future: ['Add a hosted demo without exposing the OpenWeatherMap API key.'],
-      gallery: [],
+      gallery: [
+        {
+          src: `${BASE}projects/weather-dashboard/weather-dashboard-main.png`,
+          alt: 'Weather Dashboard showing current Marrakesh weather, hourly forecast, air conditions, and seven-day forecast',
+          caption:
+            'Marrakesh dashboard with live current conditions, hourly temperatures, air metrics, and the multi-day forecast.',
+          fit: 'contain',
+          featured: true,
+        },
+        {
+          src: `${BASE}projects/weather-dashboard/weather-dashboard-hourly.png`,
+          alt: 'Hourly weather forecast for Marrakesh with times, conditions, and temperatures',
+          caption: "Marrakesh hourly forecast generated from OpenWeatherMap's forecast response.",
+          fit: 'contain',
+        },
+        {
+          src: `${BASE}projects/weather-dashboard/weather-dashboard-seven-day.png`,
+          alt: 'Seven-day weather forecast for Marrakesh with daily conditions and temperatures',
+          caption: 'Seven-day forecast view with daily weather icons and temperatures.',
+          fit: 'contain',
+        },
+        {
+          src: `${BASE}projects/weather-dashboard/weather-dashboard-city-search.png`,
+          alt: 'Weather Dashboard search result showing current weather and forecasts for Casablanca',
+          caption:
+            'A second real city search for Casablanca, updating every dashboard section from live API data.',
+          fit: 'contain',
+        },
+      ],
     },
   },
 ];

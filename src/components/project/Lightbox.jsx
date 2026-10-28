@@ -6,7 +6,7 @@ const PLACEHOLDER = `${import.meta.env.BASE_URL}placeholder.svg`;
 
 /**
  * Accessible image lightbox with keyboard support (Esc, ←/→).
- * @param {object[]} images  [{ src, caption }]
+ * @param {object[]} images  [{ src, alt, caption }]
  * @param {number|null} index  current open index, or null when closed
  */
 export default function Lightbox({ images, index, onClose, onPrev, onNext }) {
@@ -67,7 +67,7 @@ export default function Lightbox({ images, index, onClose, onPrev, onNext }) {
           >
             <img
               src={img.src || PLACEHOLDER}
-              alt={img.caption || 'Project screenshot'}
+              alt={img.alt || img.caption || 'Project screenshot'}
               className="max-h-[78vh] w-full rounded-xl object-contain"
             />
             {img.caption && (

@@ -356,15 +356,19 @@ export default function ProjectPage() {
                 <button
                   key={i}
                   onClick={() => setLightbox(i)}
-                  className="glass group block overflow-hidden rounded-xl text-left"
-                  aria-label={`Open screenshot ${i + 1}`}
+                  className={`glass group block overflow-hidden rounded-xl text-left ${
+                    img.featured ? 'sm:col-span-2 lg:col-span-2' : ''
+                  }`}
+                  aria-label={`Open ${img.alt || img.caption || `screenshot ${i + 1}`}`}
                 >
-                  <div className="aspect-video overflow-hidden">
+                  <div className="aspect-video overflow-hidden bg-slate-950/95">
                     <img
                       src={img.src || PLACEHOLDER}
-                      alt={img.caption || `Screenshot ${i + 1}`}
+                      alt={img.alt || img.caption || `Screenshot ${i + 1}`}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      className={`h-full w-full transition-transform duration-300 group-hover:scale-[1.02] ${
+                        img.fit === 'contain' ? 'object-contain' : 'object-cover'
+                      }`}
                     />
                   </div>
                   <p className="p-3 text-xs text-gray-500 dark:text-gray-400">{img.caption}</p>
