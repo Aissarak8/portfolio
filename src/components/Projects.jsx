@@ -34,7 +34,9 @@ function ProjectCard({ project }) {
             src={project.image}
             alt={project.title}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+              project.imageFit === 'contain' ? 'object-contain' : 'object-cover'
+            } ${project.imagePosition === 'top' ? 'object-top' : 'object-center'}`}
           />
         ) : (
           <div className="text-brand-500/40 flex h-full items-center justify-center text-4xl font-bold">

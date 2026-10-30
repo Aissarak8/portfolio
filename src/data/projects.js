@@ -242,100 +242,121 @@ export const projects = [
 
   {
     id: 'weather-dashboard',
-    title: 'Weather Dashboard',
+    title: 'Atmos — Weather Dashboard',
     category: 'Web',
     year: 2026,
-    status: 'Completed',
-    difficulty: 'Beginner',
-    image: `${BASE}projects/weather-dashboard/weather-dashboard-main.png`,
+    status: 'Live',
+    difficulty: 'Intermediate',
+    image: `${BASE}projects/weather-dashboard/atmos-desktop.png`,
+    imagePosition: 'top',
     description:
-      'A responsive weather dashboard with city search, current conditions, hourly forecasts, air-condition metrics, and a seven-day forecast.',
-    tech: ['JavaScript', 'HTML', 'CSS', 'OpenWeatherMap API'],
+      'A modern, responsive weather application featuring real-time conditions, an interactive temperature chart, a five-day outlook, and secure weather API integration.',
+    tech: ['JavaScript', 'HTML', 'CSS', 'SVG', 'Cloudflare Workers', 'OpenWeatherMap API'],
     features: [
-      'Search current weather by city',
-      "Today's hourly forecast",
-      'Real feel, wind, pressure, and chance of rain',
-      'Seven-day forecast',
+      'City search with live current conditions',
+      'Celsius and Fahrenheit temperature units',
+      'Accessible SVG temperature chart using actual three-hour forecast points',
+      'Five-day outlook with derived daily high and low temperatures',
+      'Humidity, wind, pressure, visibility, cloud cover, and feels-like metrics',
+      'Cloudflare Worker proxy with caching, CORS controls, and rate limiting',
     ],
     caseStudy:
-      'Built as a vanilla JavaScript learning project using OpenWeatherMap data and a responsive dashboard layout.',
+      'A premium vanilla JavaScript weather experience backed by a secure Cloudflare Worker proxy and real OpenWeatherMap data.',
     github: `${GH}/weather-dashboard`,
     demo: 'https://aissarak8.github.io/weather-dashboard/',
     featured: true,
     details: {
       overview:
-        'A functional weather dashboard built with HTML, CSS, and vanilla JavaScript. It fetches OpenWeatherMap data and presents current weather, hourly conditions, air metrics, and a seven-day forecast.',
+        'Atmos is a responsive weather application built with semantic HTML, modern CSS, and vanilla JavaScript. It presents live current conditions, an interactive temperature chart, a five-day outlook, and detailed weather metrics in a focused, accessible interface.',
       problem:
-        'Weather API responses contain several kinds of forecast data that need to remain readable across desktop and small-screen layouts.',
+        'The app needed to turn dense forecast data into a clear hierarchy across desktop and mobile while keeping the OpenWeatherMap credential out of browser code.',
       solution:
-        'Use a city search form to fetch weather data, render each forecast section with DOM updates, and organize the interface as responsive cards and scrollable forecast tables.',
+        'A secure Cloudflare Worker proxies weather requests, while the frontend renders a large current-conditions hero, an accessible SVG chart, compact forecast rows, and available condition metrics with explicit loading and error states.',
       architecture: {
         components: [
-          { name: 'HTML', desc: 'Semantic search and forecast sections.' },
+          {
+            name: 'HTML',
+            desc: 'Semantic application shell, search, status, and forecast regions.',
+          },
           {
             name: 'CSS',
-            desc: 'Responsive grid, cards, tables, and accessible interaction states.',
+            desc: 'Responsive design system, day and night themes, accessible states, and reduced-motion support.',
           },
-          { name: 'JavaScript', desc: 'API requests, error handling, and DOM rendering.' },
+          {
+            name: 'JavaScript',
+            desc: 'Weather requests, response validation, unit conversion, chart generation, and DOM rendering.',
+          },
+          {
+            name: 'Cloudflare Worker',
+            desc: 'Secret-bearing API proxy with CORS controls, caching, and rate limiting.',
+          },
         ],
         dataFlow:
-          'City search → OpenWeatherMap request → response validation → current, hourly, air-condition, and seven-day UI updates.',
+          'City search → Cloudflare Worker → OpenWeatherMap → validated response → current conditions, chart, outlook, and metric updates.',
         folderStructure:
-          'weather-dashboard/\n├── index.html\n├── style.css\n├── app.js\n├── config.example.js\n└── README.md',
+          'weather-dashboard/\n├── index.html\n├── style.css\n├── app.js\n├── weather-utils.js\n├── worker/\n│   └── src/index.js\n├── tests/\n└── wrangler.toml',
       },
       stack: [
         { label: 'Frontend', items: ['HTML', 'CSS', 'JavaScript'] },
+        { label: 'Visualization', items: ['Accessible SVG'] },
+        { label: 'Backend', items: ['Cloudflare Workers'] },
         { label: 'Data', items: ['OpenWeatherMap API'] },
+        { label: 'Deployment', items: ['GitHub Pages'] },
       ],
       process: [
-        'Created the semantic page structure and dashboard sections.',
-        'Built the responsive dark-theme layout and forecast tables.',
-        'Connected the OpenWeatherMap API and rendered live forecast data.',
-        'Improved error states, keyboard focus, contrast, and small-screen behavior.',
+        'Reworked the information hierarchy around current conditions and primary actions.',
+        'Built a responsive dark interface with compact forecast rows and condition cards.',
+        'Rendered an SVG temperature chart from the API’s three-hour forecast points.',
+        'Connected the frontend to a secured Worker endpoint and tested real city searches.',
+        'Refined keyboard focus, contrast, status messaging, reduced motion, and mobile layouts.',
       ],
       challenges: [
         {
-          challenge: 'Keeping wide forecast data usable on small screens.',
-          solution: 'Added responsive layouts and horizontal scrolling for forecast tables.',
+          challenge: 'Protecting the OpenWeatherMap key in a publicly deployed client application.',
+          solution:
+            'Moved credential-bearing requests to a Cloudflare Worker and kept browser-facing configuration limited to the proxy URL.',
         },
         {
-          challenge: 'Handling unsuccessful weather requests clearly.',
+          challenge:
+            'Presenting three-hour forecast data without implying unsupported seven-day coverage.',
           solution:
-            'Surface the actual HTTP status reason instead of always reporting an unknown city.',
+            'Charted the real forecast points and grouped the available horizon into an accurately labeled five-day outlook.',
         },
       ],
       learned: [
-        'Fetching and validating third-party API data with vanilla JavaScript.',
-        'Rendering multiple forecast views from one data flow.',
-        'Improving responsive and accessible UI states.',
+        'Designing a data-dense interface with a clear responsive hierarchy.',
+        'Generating accessible SVG visualization from live forecast data.',
+        'Separating public frontend configuration from server-side API secrets.',
       ],
-      future: ['Add a hosted demo without exposing the OpenWeatherMap API key.'],
+      future: [
+        'Offer optional geolocation after explicit user permission.',
+        'Add severe-weather alerts if a verified data source becomes available.',
+      ],
       gallery: [
         {
-          src: `${BASE}projects/weather-dashboard/weather-dashboard-main.png`,
-          alt: 'Weather Dashboard showing current Marrakesh weather, hourly forecast, air conditions, and seven-day forecast',
+          src: `${BASE}projects/weather-dashboard/atmos-desktop.png`,
+          alt: 'Atmos desktop dashboard showing live Marrakesh weather, a temperature chart, condition metrics, and a five-day outlook',
           caption:
-            'Marrakesh dashboard with live current conditions, hourly temperatures, air metrics, and the multi-day forecast.',
+            'Desktop view with current conditions, the real forecast chart, weather metrics, and five-day outlook.',
           fit: 'contain',
           featured: true,
         },
         {
-          src: `${BASE}projects/weather-dashboard/weather-dashboard-hourly.png`,
-          alt: 'Hourly weather forecast for Marrakesh with times, conditions, and temperatures',
-          caption: "Marrakesh hourly forecast generated from OpenWeatherMap's forecast response.",
+          src: `${BASE}projects/weather-dashboard/atmos-laptop.png`,
+          alt: 'Atmos weather application arranged for a laptop viewport',
+          caption: 'Laptop layout preserving the dashboard hierarchy at a narrower desktop width.',
           fit: 'contain',
         },
         {
-          src: `${BASE}projects/weather-dashboard/weather-dashboard-seven-day.png`,
-          alt: 'Seven-day weather forecast for Marrakesh with daily conditions and temperatures',
-          caption: 'Seven-day forecast view with daily weather icons and temperatures.',
+          src: `${BASE}projects/weather-dashboard/atmos-tablet.png`,
+          alt: 'Atmos responsive tablet layout with weather chart and forecast sections',
+          caption: 'Tablet layout with responsive stacking and touch-friendly controls.',
           fit: 'contain',
         },
         {
-          src: `${BASE}projects/weather-dashboard/weather-dashboard-city-search.png`,
-          alt: 'Weather Dashboard search result showing current weather and forecasts for Casablanca',
-          caption:
-            'A second real city search for Casablanca, updating every dashboard section from live API data.',
+          src: `${BASE}projects/weather-dashboard/atmos-mobile.png`,
+          alt: 'Atmos mobile weather dashboard with stacked current conditions, chart, metrics, and outlook',
+          caption: 'Mobile view with a compact, readable single-column weather experience.',
           fit: 'contain',
         },
       ],
