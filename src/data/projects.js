@@ -151,7 +151,7 @@ export const projects = [
     difficulty: 'Intermediate',
     image: `${BASE}projects/portfolio/portfolio-homepage.png`,
     description:
-      'This website — a fast, animated, SEO-optimized developer portfolio with a live GitHub dashboard, an interactive terminal, a local AI assistant, dark mode and glassmorphism UI.',
+      'A responsive React portfolio with real project case studies, live public GitHub data, an interactive terminal, a local assistant, theme switching, and accessible motion.',
     tech: ['React', 'Tailwind', 'Vite', 'Framer Motion'],
     features: [
       'Dark / light mode',
@@ -162,18 +162,18 @@ export const projects = [
       'Responsive & SEO-friendly',
     ],
     caseStudy:
-      'Designed Apple-inspired: minimal, lots of whitespace, premium typography. Built component-first and deployed on GitHub Pages.',
+      'A component-driven React portfolio that combines project storytelling with live data and practical interactive features, deployed through GitHub Pages.',
     github: `${GH}/portfolio`,
     demo: 'https://aissarak8.github.io/portfolio/',
     featured: true,
     // ✅ Real, fully-written case study (this very site).
     details: {
       overview:
-        'A fast, modern, Apple-inspired portfolio that doubles as a developer hub: live GitHub dashboard, an interactive terminal, a local AI assistant, and case-study pages — all in one cohesive, data-driven React app.',
+        'A responsive, data-driven React portfolio that presents real project case studies alongside a public GitHub dashboard, interactive terminal, local assistant, theme switching, and accessible page transitions.',
       problem:
         'A junior developer needs to stand out in the first 10 seconds. A plain CV or a generic template portfolio blends in and fails to show real engineering ability, taste, or live activity.',
       solution:
-        'Build a premium, interactive portfolio that is itself a portfolio piece: it shows live GitHub data, lets visitors explore via a terminal and an AI assistant, and presents projects as proper case studies — proving front-end skill, attention to detail, and product thinking.',
+        'Build the portfolio itself as a working product: reusable React sections consume centralized project data, public GitHub requests degrade gracefully, and visitors can explore through traditional navigation, case studies, a terminal, or a local keyword-based assistant.',
       architecture: {
         components: [
           {
@@ -205,10 +205,11 @@ export const projects = [
         { label: 'Deployment', items: ['GitHub Pages', 'GitHub Actions'] },
       ],
       process: [
-        'Designed an Apple-inspired system: lots of whitespace, premium type, a single indigo→sky gradient.',
+        'Defined a consistent dark and light visual system with restrained indigo-to-sky accents.',
         'Built component-first with a strict data/logic/presentation separation.',
         'Added live integrations (GitHub, visitor counter) with graceful loading & error states.',
         'Layered in interactive features: terminal, local AI assistant, and case-study pages.',
+        'Captured and optimized genuine browser renders for the project card and case-study gallery.',
       ],
       challenges: [
         {
@@ -229,11 +230,18 @@ export const projects = [
       ],
       future: [
         'Add a markdown blog section.',
-        'Add real project screenshots and a downloadable CV.',
+        'Add a downloadable CV when a current public version is available.',
         'Add automated tests and a Lighthouse CI check.',
       ],
       gallery: [
-        { src: '', caption: 'Hero & landing — add /projects/portfolio-hero.png' },
+        {
+          src: `${BASE}projects/portfolio/portfolio-homepage.png`,
+          alt: 'Portfolio homepage hero introducing Aissa Slikou as a future AI engineer',
+          caption:
+            'Homepage hero with primary navigation, introduction, calls to action, and technology profile.',
+          fit: 'contain',
+          featured: true,
+        },
         {
           src: `${BASE}projects/portfolio/portfolio-projects.png`,
           alt: 'Portfolio projects section showing the fully loaded AgentPilot, Portfolio Website, and Atmos project cards',
