@@ -241,7 +241,13 @@ export const projects = [
             'Responsive projects showcase with real project imagery, filtering, search, case studies, and external links.',
           fit: 'contain',
         },
-        { src: '', caption: 'Interactive terminal — add /projects/portfolio-terminal.png' },
+        {
+          src: `${BASE}projects/portfolio/portfolio-terminal.png`,
+          alt: 'Interactive portfolio terminal showing the successful neofetch command and developer profile output',
+          caption:
+            'Keyboard-accessible terminal running the implemented neofetch command with real portfolio profile data.',
+          fit: 'contain',
+        },
       ],
     },
   },
