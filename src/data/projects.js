@@ -234,7 +234,13 @@ export const projects = [
       ],
       gallery: [
         { src: '', caption: 'Hero & landing — add /projects/portfolio-hero.png' },
-        { src: '', caption: 'Live dashboard — add /projects/portfolio-dashboard.png' },
+        {
+          src: `${BASE}projects/portfolio/portfolio-projects.png`,
+          alt: 'Portfolio projects section showing the fully loaded AgentPilot, Portfolio Website, and Atmos project cards',
+          caption:
+            'Responsive projects showcase with real project imagery, filtering, search, case studies, and external links.',
+          fit: 'contain',
+        },
         { src: '', caption: 'Interactive terminal — add /projects/portfolio-terminal.png' },
       ],
     },
