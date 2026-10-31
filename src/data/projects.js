@@ -149,7 +149,7 @@ export const projects = [
     year: 2026,
     status: 'Completed',
     difficulty: 'Intermediate',
-    image: '', // 🚧 TODO: add /public/projects/portfolio.png
+    image: `${BASE}projects/portfolio/portfolio-homepage.png`,
     description:
       'This website — a fast, animated, SEO-optimized developer portfolio with a live GitHub dashboard, an interactive terminal, a local AI assistant, dark mode and glassmorphism UI.',
     tech: ['React', 'Tailwind', 'Vite', 'Framer Motion'],
