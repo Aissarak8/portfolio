@@ -14,6 +14,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write \"src/**/*.{js,jsx,css}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,css}\"",
+    "check:portfolio-screenshots": "node scripts/validate-portfolio-screenshots.mjs",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
